@@ -5,6 +5,11 @@ This tool was built specifically to help with managing project directories in th
 
 I have no idea why this isn't a built in feature for the EGL.
 
+## Screenshot
+
+![EGLPPM](https://user-images.githubusercontent.com/12866009/166248952-87532d7c-e951-4559-8338-ee8a307ef3f5.png)
+
+Yep. It's pretty simple.
 
 ## Downloads:
 Get the latest download here: https://github.com/Rhyce/EGLProjectPathManager/releases/latest
