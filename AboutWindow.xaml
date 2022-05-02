@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGLProjectPathManager"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="About" Height="550" Width="350" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen">
     <Grid>
@@ -32,7 +34,7 @@
         </TextBlock>
         <Button x:Name="RhyceDevLinkBTN" Content="Rhyce.dev" Grid.Row="2" HorizontalAlignment="Left" Width="140" Height="48" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="14" Click="RhyceDevLinkBTN_Click" />
         <Button x:Name="GitHubRepoLink" Content="GitHub" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Height="48" Margin="15,0,0,0" HorizontalAlignment="Left" Width="140" FontSize="14" Click="GitHubRepoLink_Click"/>
-        <Button x:Name="KoFiLinkBTN" Content="Ko-Fi" Margin="20,10,20,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="35" FontSize="14" Click="KoFiLinkBTN_Click"/>
+        <Button x:Name="KoFiLinkBTN" Content="Ko-Fi" Margin="20,10,20,27" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="2" FontSize="14" Click="KoFiLinkBTN_Click" HorizontalAlignment="Stretch"/>
 
     </Grid>
 </Window>

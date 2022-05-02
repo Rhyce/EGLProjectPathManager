@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGLProjectPathManager"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="Alert" Height="150" Width="300" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight" Topmost="True" WindowStartupLocation="CenterScreen">
+        Title="Alert" Height="200" Width="600" MinWidth="600" MinHeight="200"  ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock x:Name="AlertText" HorizontalAlignment="Center" Margin="0,10,0,10" Text="TextBlock" TextWrapping="Wrap" Width="280" TextAlignment="Center"/>
+        <TextBlock x:Name="AlertText" Margin="30,10,30,10" Text="TextBlock" TextWrapping="Wrap" TextAlignment="Center"/>
 
     </Grid>
 </Window>
