@@ -29,24 +29,20 @@ namespace EGLProjectPathManager
             // Check if EGL is running
             if (Process.GetProcessesByName("EpicGamesLauncher").Length > 0)
             {
-                AlertWindow alertWindow = new AlertWindow("Please close the Epic Games Launcher to avoid potential problems.");
-                alertWindow.Show();
-                
+                ShowAlertWindow("Please close the Epic Games Launcher to avoid potential problems.");       
             }
 
             // Verify if GameUserSettings.ini exists
             if (!EGL.DoesEGLGUSConfigExist())
             {
-                AlertWindow alertWindow = new AlertWindow("Could not find GameUserSettings.ini for the Epic Games Launcher.");
-                alertWindow.Show();
+                ShowAlertWindow("Could not find GameUserSettings.ini for the Epic Games Launcher.");
                 return;
             }
 
             // Verify if GameUserSettings.ini exists
             if (!EGL.DoesSectionExist("Launcher"))
             {
-                AlertWindow alertWindow = new AlertWindow("Could not find Launcher section in GameUserSettings.ini");
-                alertWindow.Show();
+                ShowAlertWindow("Could not find Launcher section in GameUserSettings.ini");
                 return;
             }
 
@@ -77,14 +73,12 @@ namespace EGLProjectPathManager
             {
                 if (EGL.DoesUProjectExistInFolder(browserDialog.SelectedPath))
                 {
-                    AlertWindow alertWindow = new AlertWindow("This is a game project file. Try the parent folder instead.");
-                    alertWindow.Show();
+                    ShowAlertWindow("This is a game project file. Try the parent folder instead.");
                     return;
                 }
                 else if(EGL.DoesDirectoryAlreadyExistInIni(browserDialog.SelectedPath))
                 {
-                    AlertWindow alertWindow = new AlertWindow("You've already added this folder. Maybe try another.");
-                    alertWindow.Show();
+                    ShowAlertWindow("You've already added this folder. Maybe try another.");
                     return;
                 }
                 else
@@ -114,7 +108,13 @@ namespace EGLProjectPathManager
         private void AboutBTN_Click(object sender, RoutedEventArgs e)
         {
             AboutWindow aboutWindow = new AboutWindow();
-            aboutWindow.Show();
+            aboutWindow.ShowDialog();
+        }
+
+        void ShowAlertWindow(string message)
+        {
+            AlertWindow alertWindow = new AlertWindow(message);
+            alertWindow.ShowDialog();
         }
     }
 }
