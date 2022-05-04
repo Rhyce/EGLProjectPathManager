@@ -5,6 +5,8 @@ This tool was built specifically to help with managing project directories in th
 
 I have no idea why this isn't a built in feature for the EGL.
 
+I made a post about it on my website here: [https://rhyce.dev/2022/04/14/fix-unreal-projects-not-showing-in-the-epic-games-launcher/](https://rhyce.dev/2022/04/14/fix-unreal-projects-not-showing-in-the-epic-games-launcher/)
+
 ## Screenshot
 
 ![EGLPPM](https://user-images.githubusercontent.com/12866009/166248952-87532d7c-e951-4559-8338-ee8a307ef3f5.png)
