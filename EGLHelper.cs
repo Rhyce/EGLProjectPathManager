@@ -14,6 +14,11 @@ namespace EGLProjectPathManager
         /// <returns></returns>
         internal bool DoesEGLGUSConfigExist()
         {
+            if (!Directory.Exists(GUS_DEFAULT_PATH))
+            {
+                return false;
+            }
+
             if (File.Exists(GUS_DEFAULT_PATH))
             {
                 return true;
@@ -51,7 +56,7 @@ namespace EGLProjectPathManager
         /// <summary>
         /// Creates a backup of GameUserSettings.ini
         /// </summary>
-        public void CreateGSUBackup()
+        public void CreateGUSBackup()
         {
             // Check if backup exists.
             if (!File.Exists(GUS_DEFAULT_PATH + ".backup"))

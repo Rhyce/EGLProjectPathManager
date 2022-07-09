@@ -19,7 +19,7 @@ namespace EGLProjectPathManager
 
 
 
-            EGL.CreateGSUBackup();
+            
 
             // Bind Buttons
             AddNewPathBTN.Click += AddNewPathBTN_Click;
@@ -38,6 +38,10 @@ namespace EGLProjectPathManager
                 ShowAlertWindow("Could not find GameUserSettings.ini for the Epic Games Launcher.");
                 return;
             }
+            else
+            {
+                EGL.CreateGUSBackup();
+            }
 
             // Verify if GameUserSettings.ini exists
             if (!EGL.DoesSectionExist("Launcher"))
@@ -45,8 +49,10 @@ namespace EGLProjectPathManager
                 ShowAlertWindow("Could not find Launcher section in GameUserSettings.ini");
                 return;
             }
-
-            RegenerateList();
+            else
+            {
+                RegenerateList();
+            }
         }
 
         private void RemovePathButton_Click(object sender, RoutedEventArgs e)
