@@ -17,10 +17,6 @@ namespace EGLProjectPathManager
             InitializeComponent();
 
 
-
-
-            
-
             // Bind Buttons
             AddNewPathBTN.Click += AddNewPathBTN_Click;
 
@@ -33,14 +29,13 @@ namespace EGLProjectPathManager
             }
 
             // Verify if GameUserSettings.ini exists
-            if (!EGL.DoesEGLGUSConfigExist())
+            if (EGL.DoesEGLGUSConfigExist())
             {
-                ShowAlertWindow("Could not find GameUserSettings.ini for the Epic Games Launcher.");
-                return;
+                EGL.CreateGUSBackup();
             }
             else
             {
-                EGL.CreateGUSBackup();
+                ShowAlertWindow("Could not find GameUserSettings.ini for the Epic Games Launcher.");
             }
 
             // Verify if GameUserSettings.ini exists

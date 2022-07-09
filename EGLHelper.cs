@@ -2,28 +2,37 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Diagnostics;
+
 namespace EGLProjectPathManager
 {
     class EGLHelper
     {
-        string GUS_DEFAULT_PATH = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\EpicGamesLauncher\\Saved\\Config\\Windows\\GameUserSettings.ini";
+        static string CONFIG_DIR_PATH  = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\EpicGamesLauncher\\Saved\\Config\\Windows\\";
+        static string CONFIG_FILE_NAME = "GameUserSettings.ini";
+
+        static string GUS_DEFAULT_PATH = CONFIG_DIR_PATH + CONFIG_FILE_NAME;
+
 
         /// <summary>
         /// Checks if the GameUserSettings.ini file exists
         /// </summary>
         /// <returns></returns>
-        internal bool DoesEGLGUSConfigExist()
+        public bool DoesEGLGUSConfigExist()
         {
-            if (!Directory.Exists(GUS_DEFAULT_PATH))
+            if (!Directory.Exists(CONFIG_DIR_PATH))
             {
+                Debug.WriteLine("Dir Doesn't Exist " + CONFIG_DIR_PATH);
                 return false;
             }
-
-            if (File.Exists(GUS_DEFAULT_PATH))
+            Console.WriteLine("Checked path. Does exist");
+            if (!File.Exists(GUS_DEFAULT_PATH))
             {
-                return true;
+                Debug.WriteLine("GUS Doesnt exist");
+
+                return false;
             }
-            return false;
+            return true;
         }
 
         /// <summary>
