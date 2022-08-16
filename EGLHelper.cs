@@ -72,6 +72,8 @@ namespace EGLProjectPathManager
             {
                 // Create a backup file with .backup as the extension
                 File.Copy(GUS_DEFAULT_PATH, GUS_DEFAULT_PATH + ".backup");
+
+                Debug.WriteLine("Created Backup at " + GUS_DEFAULT_PATH + ".backup");
             }
         }
 

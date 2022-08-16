@@ -22,10 +22,12 @@ namespace EGLProjectPathManager
 
             RemovePathButton.Click += RemovePathButton_Click;
 
+            //SearchForDirsBTN.Click += SearchForDirsBTN_Click;
+
             // Check if EGL is running
             if (Process.GetProcessesByName("EpicGamesLauncher").Length > 0)
             {
-                ShowAlertWindow("Please close the Epic Games Launcher to avoid potential problems.");       
+                ShowAlertWindow("Please close the Epic Games Launcher to avoid potential problems.");
             }
 
             // Verify if GameUserSettings.ini exists
@@ -44,10 +46,9 @@ namespace EGLProjectPathManager
                 ShowAlertWindow("Could not find Launcher section in GameUserSettings.ini");
                 return;
             }
-            else
-            {
+
                 RegenerateList();
-            }
+
         }
 
         private void RemovePathButton_Click(object sender, RoutedEventArgs e)
@@ -116,6 +117,12 @@ namespace EGLProjectPathManager
         {
             AlertWindow alertWindow = new AlertWindow(message);
             alertWindow.ShowDialog();
+        }
+
+        private void SearchForDirsBTN_Click(object sender, RoutedEventArgs e)
+        {
+            SearchForDirsWindow searchForDirsWindow = new SearchForDirsWindow();
+            searchForDirsWindow.ShowDialog();
         }
     }
 }

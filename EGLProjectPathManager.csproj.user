@@ -9,18 +9,24 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AboutWindow.xaml.cs">
+    <Compile Update="SearchForDirsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="AlertWindow.xaml.cs">
+    <Compile Update="Windows\AboutWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AlertWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AboutWindow.xaml">
+    <Page Update="SearchForDirsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="AlertWindow.xaml">
+    <Page Update="Windows\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AlertWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
